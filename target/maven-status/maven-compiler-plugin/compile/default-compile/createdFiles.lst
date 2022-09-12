@@ -1,0 +1,4 @@
+com\hemebiotech\analytics\ISymptomReader.class
+com\hemebiotech\analytics\ReadSymptomDataFromFile.class
+com\hemebiotech\analytics\AnalyticsCounter.class
+com\hemebiotech\analytics\AnalyticsSortie.class
