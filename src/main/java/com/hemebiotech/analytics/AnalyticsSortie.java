@@ -7,7 +7,6 @@ import java.util.Map.Entry;
 import java.util.TreeMap;
 
 /**
- *Besoin d'un TreeMap (key:String ,value: Integer) pour fonctionner (utilisez la méthode bringOrder d'AnalyticsSorting).
  * Cette classe est utilisée pour générer un nouveau fichier appelé "result.out" ou directement blanc dessus tous les symptômes
  * avec leur décompte, si le fichier existe déjà.
 
