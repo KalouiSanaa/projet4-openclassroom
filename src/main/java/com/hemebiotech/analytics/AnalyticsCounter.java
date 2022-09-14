@@ -9,54 +9,60 @@ import java.util.TreeMap;
  * @author Kaloui sanaa
  */
 public class AnalyticsCounter {
-    private static List<String> list;
-     private static TreeMap<String, Integer> symptomsOccurence;
+  private static List<String> listSymptoms;
+  private static TreeMap<String, Integer> symptomsOccurence;
 
- 	public static void main(String[] args) throws Exception {
+  /**
+   * @param args
+   * @throws Exception
+   */
+  public static void main(String[] args) throws Exception {
+    // creer une liste des symptomes.
+    listSymptoms = reading("symptoms.txt");
 
-		
-		//creer une liste des symptomes.
-		
-	 ReadSymptomDataFromFile create = new ReadSymptomDataFromFile("symptoms.txt");
+    // Créer une liste de tri.
+    symptomsOccurence = count(listSymptoms);
 
-		 list = create.GetSymptoms();
-                 
-                 
-                //Créer une liste de tri.
-                
-                symptomsOccurence = count(list);
-                
-                //Regardez si le tri a fonctionné.
-                
-               showList();
-               
-               //Générer un fichier avec les résultats.
-                
-                AnalyticsSortie file = new AnalyticsSortie(symptomsOccurence);
-                
-		file.Sortie();
-                
-                
-               		//Créer une liste de tri.
-    }
-        
-        public static TreeMap<String, Integer> count(List<String> list) {
-            
-   symptomsOccurence = new TreeMap<>();
+    // générer le remplissage avec tous les symptômes
+    saving();
+
+    // Regardez si le tri a fonctionné.
+    showList();
+  }
+
+  static List<String> reading(String fileName) {
+    ReadSymptomDataFromFile create = new ReadSymptomDataFromFile(fileName);
+    List<String> symptomsList = create.getSymptoms();
+    return symptomsList;
+  }
+
+  /**
+   * return une liste de tri par ordre alphanumérique
+   */
+  public static TreeMap<String, Integer> count(List<String> list) {
+
+    symptomsOccurence = new TreeMap<>();
 
     for (String line : list) {
       symptomsOccurence.put(line, Collections.frequency(list, line));
     }
     return symptomsOccurence;
-    /** return une liste de tri par ordre alphanumérique
- */
   }
-        /**
-L'affichage dans le shell si le tri a fonctionné. */
-        
-        public static void showList() {
-		System.out.println("avant tri " + list);
-		System.out.println("apres tri : " + symptomsOccurence);
-	}
+
+  /**
+   * L'affichage dans le shell si le tri a fonctionné.
+   */
+
+  public static void showList() {
+    System.out.println("avant tri " + listSymptoms);
+    System.out.println("apres tri : " + symptomsOccurence);
+  }
+
+ // générer le remplissage "result.out" avec tous les symptômes
+
+  static void saving() {
+    AnalyticsSortie file = new AnalyticsSortie(symptomsOccurence);
+    file.Sortie();
+  }
 
 }

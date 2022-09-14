@@ -22,7 +22,7 @@ public class  ReadSymptomDataFromFile implements ISymptomReader  {
 	 * Attraper une exception si le chemin du fichier est erroné.
 	 */
 
-	public ArrayList<String> GetSymptoms() {
+	public ArrayList<String> getSymptoms() {
 
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(filepath));
