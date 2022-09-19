@@ -1,5 +1,4 @@
 package com.hemebiotech.analytics;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.TreeMap;
@@ -14,6 +13,7 @@ public class AnalyticsCounter {
 
   /**
    * @param args
+  
    * @throws Exception
    */
   public static void main(String[] args) throws Exception {
@@ -29,7 +29,9 @@ public class AnalyticsCounter {
     // Regardez si le tri a fonctionné.
     showList();
   }
-
+/**
+   * creer une liste des symptomes et Transformer le fichier avec les symptomes a une listes(collections)
+   */
   static List<String> reading(String fileName) {
     ReadSymptomDataFromFile create = new ReadSymptomDataFromFile(fileName);
     List<String> symptomsList = create.getSymptoms();
@@ -62,7 +64,7 @@ public class AnalyticsCounter {
 
   static void saving() {
     AnalyticsSortie file = new AnalyticsSortie(symptomsOccurence);
-    file.Sortie();
+    file.sortie();
   }
 
 }

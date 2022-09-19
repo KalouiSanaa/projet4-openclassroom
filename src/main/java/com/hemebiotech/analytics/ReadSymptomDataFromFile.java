@@ -18,7 +18,7 @@ public class  ReadSymptomDataFromFile implements ISymptomReader  {
 		ReadSymptomDataFromFile.filepath = path;
 	}
 
-	/** @renvoie une Arraylist avec tous les symptômes du fichier. 
+	/** renvoie une Arraylist avec tous les symptômes du fichier. 
 	 * Attraper une exception si le chemin du fichier est erroné.
 	 */
 

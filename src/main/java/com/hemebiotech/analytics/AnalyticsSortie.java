@@ -9,8 +9,6 @@ import java.util.TreeMap;
 /**
  * Cette classe est utilisée pour générer un nouveau fichier appelé "result.out" ou directement blanc dessus tous les symptômes
  * avec leur décompte, si le fichier existe déjà.
-
-
  */
 
 public class AnalyticsSortie {
@@ -26,15 +24,15 @@ public class AnalyticsSortie {
 /** 
  * Cette fonction va générer le remplissage "result.out" avec tous les symptômes.	
  */
-	public void Sortie() {
+	public void sortie() {
 
-		if (!fileOut.exists()) { 										//create file
+		if (!fileOut.exists()) { 										//creer fichier
 			try {
 				fileOut.createNewFile();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			try {														//write in fine
+			try {														//ecrire dans le fichier
 				FileWriter writer = new FileWriter(fileOut);				
 				BufferedWriter bw = new BufferedWriter(writer);
 
